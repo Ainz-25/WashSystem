@@ -69,6 +69,11 @@ class MotorcycleWash extends WashService {
     }
 }
 
+class HelmetWash extends WashService {
+    public HelmetWash(ItemInfo itemInfo, double price, boolean isMember) {
+        super(itemInfo, price, isMember);
+    }
+}
 
 
 public class AutoCleanSystem {
@@ -79,9 +84,13 @@ public class AutoCleanSystem {
         ItemInfo motor = new ItemInfo("N 5678 CD", "Motor Matic", "Vario");
         MotorcycleWash order2 = new MotorcycleWash(motor, 25000.0, false);
 
+        ItemInfo helm = new ItemInfo("Ageng", "Helm", "KYT_Kyoto");
+        HelmetWash order3 = new HelmetWash(motor, 10000.0, false);
+
         order1.printInvoice();
         System.out.println();
-        order2.printInvoice();
-
+        order3.printInvoice();
+        System.out.println();
+        order3.printInvoice();
     }
 }
